@@ -1,0 +1,31 @@
+body, html{
+    height: 100%;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: blueviolet;
+    color: cornsilk;
+}
+
+header > div{
+    height: 25px;
+    margin: 1% 3%;
+}
+
+.logo{
+    font-weight: bold;
+}
+
+picture{
+
+}
+
+img{
+    height: 300px;
+}
