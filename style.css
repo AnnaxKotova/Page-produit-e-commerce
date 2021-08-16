@@ -5,7 +5,7 @@ body, html{
 
 header{
     display: flex;
-    height: 10%;
+    height: 7%;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +14,7 @@ header{
 }
 
 header > div{
-    height: 25px;
+    height: 15px;
     margin: 1% 3%;
 }
 
@@ -23,9 +23,16 @@ header > div{
 }
 
 picture{
+    display: flex;
+    justify-content: space-around;
+    margin: 1.5%;
 
 }
 
 img{
     height: 300px;
+}
+
+.description_article, .jAchete{
+margin-left: 1.5%;
 }
