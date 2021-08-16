@@ -1,46 +1,36 @@
 
+let melonsPanier = document.querySelector("#numero_melons_panier");
 
-let ajout = document.querySelector("#ajout");
-
- 
-
-function ajout_panier (){
-    let numeroArticles = document.querySelector("#numero_articles").value;
-    localStorage.setItem("melones", numeroArticles);
-
-    let numeroMelonesPanier = document.querySelector("#numero_melons_panier");
-    let numeroArticlesText = document.createTextNode(numeroArticles);
-    numeroMelonesPanier.appendChild(numeroArticlesText);
-}
+let lsArticles = localStorage.getItem("melons"); //LOCALE STORAGE
 
 
+let ajout = document.querySelector("#ajout"); //bouton ajout au panier
 
-ajout.addEventListener('click', ajout_panier);
+ajout.addEventListener('click', function (e){
+    let numeroArticles = document.querySelector("#numero_articles").value; //NUMERO SAISIE
+    if (numeroArticles){    //si on a le valeur saisi on peut appeler la fonction
+        let sumArticles = parseInt(numeroArticles) + Number(lsArticles); //numeroArticle était string
+        lsArticles = localStorage.setItem("melons", sumArticles); 
+        
 
-
-
-/*
-let ajout = document.querySelector("#ajout");
+    }    
+})
 
 
 
-function ajout_storage (){
-    let numeroArticles = document.querySelector("#numero_articles").value;
-    
-    localStorage.setItem("melones", numeroArticles);
 
-}
+// VIDER UN PANIER
+let clear = document.querySelector("#clear");
 
-let numeroMelonesPanier = document.querySelector("#numero_melons_panier");
-let numeroArticlesText = document.createTextNode(numeroArticles);
-numeroMelonesPanier.appendChild(numeroArticlesText);
+clear.addEventListener('click', function (e){
+localStorage.removeItem("melons");
+})
 
 
-function sum (){
-    for (i=)
-}
-
-let melonesBefore = storage.getItem(melones);
-
-ajout.addEventListener('click', ajout_panier);
-*/
+let articlesText = document.createTextNode(lsArticles);
+melonsPanier.appendChild(articlesText);
+// if (lsArticles === null) {
+//     melonsPanier.innerHTML = "0"; //sinon on écrira "null"
+// }
+// else {
+// }
