@@ -2,7 +2,7 @@
 
 let ajout = document.querySelector("#ajout");
 
-
+ 
 
 function ajout_panier (){
     let numeroArticles = document.querySelector("#numero_articles").value;
