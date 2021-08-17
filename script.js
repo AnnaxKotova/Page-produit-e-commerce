@@ -3,16 +3,20 @@ let lsArticles = localStorage.getItem("melons"); //LOCALE STORAGE
 
 
 // pour affichage correct de nombre d'articles
-let melonsPanier = document.querySelector("#numero_melons_panier");
+let panier = document.querySelector("#numero_panier");
 
 let ajout = document.querySelector("#ajout"); //bouton ajout au panier
 ajout.addEventListener('click', function (e){
     let numeroArticles = document.querySelector("#numero_articles").value; //NUMERO SAISIE
     if (numeroArticles){    //si on a le valeur saisi on peut appeler la fonction
+        panier.innerText = " ";
+
         sumArticles = parseInt(numeroArticles) + Number(lsArticles); //tout était string
         localStorage.setItem("melons", sumArticles);
         lsArticles = localStorage.getItem("melons");
-        melonsPanier.innerHTML = lsArticles;
+        
+        const panierText = document.createTextNode(lsArticles);
+        panier.appendChild(panierText);
     }  
 })
 
@@ -22,14 +26,17 @@ let clear = document.querySelector("#clear");
 clear.addEventListener('click', function (e){
     localStorage.removeItem("melons");
     lsArticles = localStorage.getItem("melons");
-    melonsPanier.innerHTML = "0";
+    panier.innerText = "0"; //sinon on va avoir le nombre des articles
+
 })
 
-if (lsArticles === null) {
-    melonsPanier.innerHTML = "0";
-}
 
-
-//Porquoi ça marche avec innerHTML mais ne marche pas avec appenchilds et tout ça?
-
+ //pour le premier affichage de page
+if (lsArticles !== null) {  //condition prioritaire, plus de cases
+    panier.innerText = " ";
+    panier.innerText = lsArticles;
+    }
+else 
+panier.innerText = " ";
+panier.innerText = "0";
 
