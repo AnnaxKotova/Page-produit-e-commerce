@@ -33,6 +33,24 @@ img{
     height: 300px;
 }
 
-.description_article, .jAchete{
+div{
 margin-left: 1.5%;
 }
+ .jAchete{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 400px;
+    justify-content: space-around;
+    
+ }
+
+input{
+    width: 100px;
+    margin-bottom: 1.5%;
+}
+
+ button{
+    width: 250px;
+    margin-bottom: 1.5%;
+ }

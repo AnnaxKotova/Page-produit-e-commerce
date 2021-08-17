@@ -22,18 +22,19 @@
         </div>
     </header>
     <main>
-        <picture><img src="https://cdn.pixabay.com/photo/2015/02/06/18/57/melon-626351_1280.jpg" alt=""></picture>
+        <picture></picture>
         <div class="container_article">
             <div class="description_article">
-                <h1>Melon charentais - 1 piece</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae cum dolorem praesentium eaque nemo sint sapiente! Ad id quidem optio adipisci error, nesciunt minima accusamus odit, culpa nobis aut?</p>
+                <h1 id="nomProduit"></h1>
+                <p id="prixProduit"></p>
+                <p id="description"></p>
             </div>
-            <div class="jAchete">
-                <div>Veuillez saisir numéro d'articles</div>
+            <div>Veuillez saisir numéro d'articles</div>
+            <div class="jAchete">                
                 <input type="number" min="0" id="numero_articles">
                 <button id="ajout">Ajouter dans un panier</button>
+                <button id="clear">Vider un panier</button>
             </div>
-            <button id="clear">Vider un panier</button>
         </div>
     </main>
     <script src="script.js"></script>
